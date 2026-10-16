@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayam Geprek Senthil — Geprek Enak, Nggak Ada Buленныхnya</title>
+<meta name="description" content="Ayam Geprek Senthil — ayam geprek crispy dengan sambal level 1 sampai 5. Halal, fresh, dikirim cepat. Pemesanan via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<a class="skip-link" href="#menu">Langsung ke menu</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="brand" href="#top" aria-label="Ayam Geprek Senthil, ke beranda">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><path d="M16 3c5 0 9 3.6 9 8.2 0 2.4-.9 4.5-2.4 5.9v6.4a3 3 0 0 1-3 3H12.4a3 3 0 0 1-3-3v-6.4C7.9 15.7 7 13.6 7 11.2 7 6.6 11 3 16 3Z" fill="currentColor" opacity=".9"/><circle cx="12.6" cy="11.4" r="1.5" fill="#FFF"/><circle cx="19.4" cy="11.4" r="1.5" fill="#FFF"/><path d="M12.4 18.6c2.2 1.9 5 1.9 7.2 0" stroke="#FFF" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </span>
+      <span class="brand__text">Ayam Geprek <em>Senthil</em></span>
+    </a>
+
+    <nav class="nav__links" aria-label="Navigasi utama">
+      <a href="#menu">Menu</a>
+      <a href="#promo">Promo</a>
+      <a href="#testimoni">Testimoni</a>
+      <a href="#lokasi">Lokasi</a>
+    </nav>
+
+    <a class="btn btn--solid btn--sm nav__cta" href="#pesan">Pesan Sekarang</a>
+
+    <button class="nav__burger" id="burger" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav" hidden>
+    <a href="#menu">Menu</a>
+    <a href="#promo">Promo</a>
+    <a href="#testimoni">Testimoni</a>
+    <a href="#lokasi">Lokasi</a>
+    <a class="btn btn--solid" href="#pesan">Pesan Sekarang</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero__inner">
+
+    <div class="hero__copy">
+      <span class="pill reveal">
+        <span class="pill__dot" aria-hidden="true"></span>
+        <strong>4.9/5</strong> dari 2.400+ pelanggan
+      </span>
+
+      <h1 class="hero__title reveal" data-delay="1">
+        Geprek Enak<br>
+        Sampai <span class="hl">Tulang Retak</span>
+      </h1>
+
+      <p class="hero__lead reveal" data-delay="2">
+        Ayam digoreng crispy di dapur, lalu digebrek di depan kamu lengkap dengan
+        sambal Level 1 sampai <strong>Level 5 Mematikan</strong>. Halal, freshly cooked,
+        sampai 20 menit.
+      </p>
+
+      <div class="hero__actions reveal" data-delay="3">
+        <a class="btn btn--solid btn--lg" href="#pesan">
+          Pesan Sekarang
+          <svg class="btn__ico" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn--ghost btn--lg" href="#menu">Lihat Menu</a>
+      </div>
+
+      <ul class="hero__meta reveal" data-delay="4">
+        <li>Gratis Ongkir Area Malang</li>
+        <li>Buka 10.00 – 22.00</li>
+        <li>Tanpa MSG, Tanpa Pewarna</li>
+      </ul>
+    </div>
+
+    <div class="hero__art reveal" data-delay="2">
+      <div class="art">
+        <div class="art__glow" aria-hidden="true"></div>
+
+        <div class="art__plate" aria-hidden="true">
+          <div class="plate">
+            <div class="plate__ring"></div>
+            <div class="plate__food">
+              <span class="chicken">🍗</span>
+              <span class="chili chili--1">🌶️</span>
+              <span class="chili chili--2">🌶️</span>
+              <span class="chili chili--3">🌶️</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-float card-float--level">
+          <span class="card-float__label">Level Paling Laris</span>
+          <strong>Level 3 · Sambal Matah</strong>
+        </div>
+
+        <div class="card-float card-float--price">
+          <span class="card-float__label">Mulai dari</span>
+          <strong>Rp18.000</strong>
+        </div>
+
+        <div class="card-float card-float--rating">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <strong>Bikin's nagih</strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>GEBUK SAMPE TULANG</span><i>★</i>
+    <span>LEVEL 1 SAMPAI 5</span><i>★</i>
+    <span>HANDMADE DAPUR IBU</span><i>★</i>
+    <span>HALAL MUI</span><i>★</i>
+    <span>DISKON 25% SETIAP SORE</span><i>★</i>
+    <span>GEBUK SAMPE TULANG</span><i>★</i>
+    <span>LEVEL 1 SAMPAI 5</span><i>★</i>
+    <span>HANDMADE DAPUR IBU</span><i>★</i>
+    <span>HALAL MUI</span><i>★</i>
+    <span>DISKON 25% SETIAP SORE</span><i>★</i>
+  </div>
+</div>
+
+<!-- ============ BENEFIT ============ -->
+<section class="benefits">
+  <div class="wrap">
+    <ul class="benefits__grid">
+      <li class="benefit reveal">
+        <span class="benefit__ico" aria-hidden="true">🕌</span>
+        <h3>Halal MUI</h3>
+        <p>Sertifikasi halal resmi. Ayam dari breeder lokal, dipotong &amp; dibekukan poin.</p>
+      </li>
+      <li class="benefit reveal" data-delay="1">
+        <span class="benefit__ico" aria-hidden="true">🔥</span>
+        <h3>Digoreng Fresh</h3>
+        <p>Dimasak setelah pesanan masuk, bukan disimpan semalaman.</p>
+      </li>
+      <li class="benefit reveal" data-delay="2">
+        <span class="benefit__ico" aria-hidden="true">🛵</span>
+        <h3>Sampai 20 Menit</h3>
+        <p>Kurir sendiri, dibungkus biar crispy sampai tujuan.</p>
+      </li>
+      <li class="benefit reveal" data-delay="3">
+        <span class="benefit__ico" aria-hidden="true">💸</span>
+        <h3>Harga Warung</h3>
+        <p>Mulai 18 ribu. Nggak perlu dompet bolong.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section class="section section--dark" id="menu">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="eyebrow reveal">Menu Andalan</span>
+      <h2 class="reveal" data-delay="1">Pilih Level Pedasnya,<br>Kamu yang Bold Enough?</h2>
+      <p class="sec-head__lead reveal" data-delay="2">Satu porsi sama, beda karakter. Semua sudah include nasi, lalapan, dan kerupuk.</p>
+    </header>
+
+    <div class="menu-grid">
+
+      <article class="menu-card reveal">
+        <div class="menu-card__head">
+          <span class="lvl lvl--1">Level 1</span>
+          <span class="menu-card__price">Rp18.000</span>
+        </div>
+        <div class="menu-card__visual lvlbg--1" aria-hidden="true">🌶️</div>
+        <h3>Original</h3>
+        <p>Cabai merah asli, buat yang masih belum pernah coba sambal pedas. Aman, masih aman.</p>
+        <ul class="menu-card__meta">
+          <li>🔥 1/5</li><li>⏱ 15 mnt</li><li>★ 4.7 (820)</li>
+        </ul>
+      </article>
+
+      <article class="menu-card reveal" data-delay="1">
+        <div class="menu-card__head">
+          <span class="lvl lvl--2">Level 2</span>
+          <span class="menu-card__price">Rp20.000</span>
+        </div>
+        <div class="menu-card__visual lvlbg--2" aria-hidden="true">🌶️</div>
+        <h3>Mercon</h3>
+        <p>Sambal mercon asap. Pegal di murah, langsung minta nusuk.</p>
+        <ul class="menu-card__meta">
+          <li>🔥 2/5</li><li>⏱ 15 mnt</li><li>★ 4.8 (1.100)</li>
+        </ul>
+      </article>
+
+      <article class="menu-card menu-card--hot reveal" data-delay="2">
+        <span class="menu-card__flag">Paling Laris</span>
+        <div class="menu-card__head">
+          <span class="lvl lvl--3">Level 3</span>
+          <span class="menu-card__price">Rp22.000</span>
+        </div>
+        <div class="menu-card__visual lvlbg--3" aria-hidden="true">🌶️</div>
+        <h3>Sambal Matah</h3>
+        <p>Tomato segar, bawang, cabe rawit. Fresh, pedes clean, dan paling dicari.</p>
+        <ul class="menu-card__meta">
+          <li>🔥 3/5</li><li>⏱ 18 mnt</li><li>★ 4.9 (2.400)</li>
+        </ul>
+      </article>
+
+      <article class="menu-card reveal">
+        <div class="menu-card__head">
+          <span class="lvl lvl--4">Level 4</span>
+          <span class="menu-card__price">Rp24.000</span>
+        </div>
+        <div class="menu-card__visual lvlbg--4" aria-hidden="true">🧀</div>
+        <h3>Keju Lumer</h3>
+        <p>Ayam geprek disiram mozzarella meleleh. Manis-gurih, lawan konsep geprek, nggak kalah.</p>
+        <ul class="menu-card__meta">
+          <li>🔥 4/5</li><li>⏱ 20 mnt</li><li>★ 4.8 (640)</li>
+        </ul>
+      </article>
+
+      <article class="menu-card reveal" data-delay="1">
+        <div class="menu-card__head">
+          <span class="lvl lvl--5">Level 5</span>
+          <span class="menu-card__price">Rp26.000</span>
+        </div>
+        <div class="menu-card__visual lvlbg--5" aria-hidden="true">💀</div>
+        <h3>Mematikan</h3>
+        <p>Level lima, buat yang benar-benar mau nangis. Tanda tangan rumah kami.</p>
+        <ul class="menu-card__meta">
+          <li>🔥 5/5</li><li>⏱ 20 mnt</li><li>★ 4.9 (310)</li>
+        </ul>
+      </article>
+
+      <article class="menu-card menu-card--set reveal" data-delay="2">
+        <div class="menu-card__head">
+          <span class="lvl lvl--set">Paket</span>
+          <span class="menu-card__price">Rp28.000</span>
+        </div>
+        <div class="menu-card__visual lvlbg--set" aria-hidden="true">🍚</div>
+        <h3>Geprek Komplit</h3>
+        <p>Ayam geprek Level 2 + Es Teh Manis. Paket buat makan siang cepat, berater hemat.</p>
+        <ul class="menu-card__meta">
+          <li>🔥 2/5</li><li>⏱ 15 mnt</li><li>★ 4.8 (980)</li>
+        </ul>
+      </article>
+
+    </div>
+
+    <p class="menu-note reveal">Tambah level gratis. Mau level 6? Tulis di catatan — kalau masih hidup, kami kirim.</p>
+  </div>
+</section>
+
+<!-- ============ PROMO ============ -->
+<section class="section promo" id="promo">
+  <div class="wrap">
+    <div class="promo__card reveal">
+      <div class="promo__body">
+        <span class="eyebrow eyebrow--light">Promo Sore</span>
+        <h2 class="promo__title"><span class="promo__disc">25% OFF</span><br>Setiap Hari 15.00 – 17.00</h2>
+        <p class="promo__lead">
+          Jam paling sepi, diskon paling gede. Pesan sebelum 14.45 biar nggak kehabisan
+          dan masih dapat harga lama.
+        </p>
+
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div class="countdown__cell"><strong data-cd="h">00</strong><span>Jam</span></div>
+          <div class="countdown__sep">:</div>
+          <div class="countdown__cell"><strong data-cd="m">00</strong><span>Menit</span></div>
+          <div class="countdown__sep">:</div>
+          <div class="countdown__cell"><strong data-cd="s">00</strong><span>Detik</span></div>
+        </div>
+
+        <a class="btn btn--dark btn--lg" href="#pesan">Ambil Promo Sore</a>
+      </div>
+
+      <div class="promo__stats">
+        <div class="stat">
+          <strong class="stat__num" data-count="2400">0</strong>
+          <span>Ulasan dari pelanggan</span>
+        </div>
+        <div class="stat">
+          <strong class="stat__num" data-count="38">0</strong>
+          <span>RIBU porsi terjual</span>
+        </div>
+        <div class="stat">
+          <strong class="stat__num" data-count="20">0</strong>
+          <span>Menit rata-rata sampai</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONI ============ -->
+<section class="section section--cream" id="testimoni">
+  <div class="wrap">
+    <header class="sec-head sec-head--center">
+      <span class="eyebrow reveal">Kata Mereka</span>
+      <h2 class="reveal" data-delay="1">Yang Bilang Enak,<br>Belas Banyak Nangis</h2>
+    </header>
+
+    <div class="testi-grid">
+      <figure class="testi reveal">
+        <div class="testi__stars" aria-label="5 dari 5 bintang">★★★★★</div>
+        <blockquote>“Beneran di-gebrek di depan mata. Kuahnya berantakan di tangan, hati senang.”</blockquote>
+        <figcaption>
+          <span class="avatar avatar--1">R</span>
+          <div><strong>Rizky A.</strong><small>Level 3 · Order 14×</small></div>
+        </figcaption>
+      </figure>
+
+      <figure class="testi testi--featured reveal" data-delay="1">
+        <div class="testi__stars" aria-label="5 dari 5 bintang">★★★★★</div>
+        <blockquote>“Level 5 tuh bohong doang. Saya nangis, abang masih melayani dengan tenang. Respect.”</blockquote>
+        <figcaption>
+          <span class="avatar avatar--2">S</span>
+          <div><strong>Sarah N.</strong><small>Level 5 · Order 3×</small></div>
+        </figcaption>
+      </figure>
+
+      <figure class="testi reveal" data-delay="2">
+        <div class="testi__stars" aria-label="5 dari 5 bintang">★★★★★</div>
+        <blockquote>“Murah, cepat, crispy beneran walau udah 30 menit sampai.-langsung langganan.”</blockquote>
+        <figcaption>
+          <span class="avatar avatar--3">D</span>
+          <div><strong>Dimas P.</strong><small>Level 2 · Order 21×</small></div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORM PEMESANAN ============ -->
+<section class="section section--dark order" id="pesan">
+  <div class="wrap order__inner">
+
+    <div class="order__copy">
+      <span class="eyebrow eyebrow--light reveal">Pesan Sekarang</span>
+      <h2 class="reveal" data-delay="1">Isi Form,<br>Ayam Disiapkan</h2>
+      <p class="sec-head__lead reveal" data-delay="2">
+        Nggak ada checkout ribet. Isi form, tim kami konfirmasi lewat WhatsApp
+        paling lama 5 menit.
+      </p>
+
+      <ul class="order__steps reveal" data-delay="3">
+        <li><span>1</span> Isi data di samping</li>
+        <li><span>2</span> Dikonfirmasi via WhatsApp</li>
+        <li><span>3</span> Kurir atau ambil sendiri</li>
+      </ul>
+    </div>
+
+    <form class="form reveal" data-delay="2" id="orderForm" novalidate>
+      <div class="form__row">
+        <label class="field">
+          <span>Nama</span>
+          <input type="text" name="nama" placeholder="Nama lengkap" required autocomplete="name">
+        </label>
+        <label class="field">
+          <span>No. WhatsApp</span>
+          <input type="tel" name="hp" placeholder="08xxxxxxxxxx" required autocomplete="tel" inputmode="numeric">
+        </label>
+      </div>
+
+      <div class="form__row">
+        <label class="field">
+          <span>Jumlah Porsi</span>
+          <input type="number" name="porsi" value="1" min="1" max="50" required>
+        </label>
+        <label class="field">
+          <span>Level Pedas</span>
+          <select name="level">
+            <option value="1">Level 1 — Original</option>
+            <option value="2" selected>Level 2 — Mercon</option>
+            <option value="3">Level 3 — Sambal Matah</option>
+            <option value="4">Level 4 — Keju Lumer</option>
+            <option value="5">Level 5 — Mematikan</option>
+          </select>
+        </label>
+      </div>
+
+      <label class="field">
+        <span>Catatan <em>(opsional)</span></span>
+        <textarea name="catatan" rows="3" placeholder="Pedes dikit, sambal terpisah, level 6 kalau berani…"></textarea>
+      </label>
+
+      <button class="btn btn--solid btn--lg btn--block" type="submit">
+        Kirim Pesanan
+        <svg class="btn__ico" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <p class="form__fine">Tanpa DP. Bayar di tempat atau QRIS saat pesanan diterima.</p>
+    </form>
+
+  </div>
+</section>
+
+<!-- ============ LOKASI ============ -->
+<section class="section" id="lokasi">
+  <div class="wrap locate__inner">
+
+    <div class="locate__map reveal" aria-hidden="true">
+      <div class="map">
+        <span class="map__road"></span>
+        <span class="map__road map__road--v"></span>
+        <span class="map__pin">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.1 7-11.4A7 7 0 1 0 5 10.6C5 15.9 12 22 12 22Z" fill="currentColor"/><circle cx="12" cy="10.4" r="2.6" fill="#FFF"/></svg>
+        </span>
+      </div>
+    </div>
+
+    <div class="locate__info">
+      <span class="eyebrow reveal">Mampir Dulu</span>
+      <h2 class="reveal" data-delay="1">Kedai Senthil</h2>
+      <p class="sec-head__lead reveal" data-delay="2">
+        Jl. Ijen No. 42, Oro-oro Dowo, Malang, Jawa Timur 65139.
+        Depan masjid, parkir nggak ribet.
+      </p>
+
+      <dl class="hours reveal" data-delay="3">
+        <div><dt>Senin – Jumat</dt><dd>10.00 – 22.00</dd></div>
+        <div><dt>Sabtu – Minggu</dt><dd>09.30 – 23.00</dd></div>
+        <div><dt>Jumat</dt><dd class="is-holiday">Libur mulai 13.00</dd></div>
+      </dl>
+
+      <div class="locate__actions reveal" data-delay="4">
+        <a class="btn btn--solid" href="#pesan">Pesan Ambil Sendiri</a>
+        <a class="btn btn--ghost" href="tel:+623123456789">Telepon Dapur</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CTA PENUTUP ============ -->
+<section class="closer">
+  <div class="wrap closer__inner reveal">
+    <h2>Lapar?<br>Jangan Ditahan.</h2>
+    <a class="btn btn--dark btn--lg" href="#pesan">Pesan Ayam Geprek</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand">
+      <a class="brand brand--light" href="#top">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M16 3c5 0 9 3.6 9 8.2 0 2.4-.9 4.5-2.4 5.9v6.4a3 3 0 0 1-3 3H12.4a3 3 0 0 1-3-3v-6.4C7.9 15.7 7 13.6 7 11.2 7 6.6 11 3 16 3Z" fill="currentColor" opacity=".9"/><circle cx="12.6" cy="11.4" r="1.5" fill="#1A1210"/><circle cx="19.4" cy="11.4" r="1.5" fill="#1A1210"/><path d="M12.4 18.6c2.2 1.9 5 1.9 7.2 0" stroke="#1A1210" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </span>
+        <span class="brand__text">Ayam Geprek <em>Senthil</em></span>
+      </a>
+      <p>Ayam geprek rumahan di Malang. Dibuat fresh, digebruk di depan kamu.</p>
+    </div>
+
+    <nav class="footer__col" aria-label="Menu footer">
+      <h4>Jelajahi</h4>
+      <a href="#menu">Menu</a>
+      <a href="#promo">Promo</a>
+      <a href="#testimoni">Testimoni</a>
+      <a href="#pesan">Pesan</a>
+    </nav>
+
+    <div class="footer__col">
+      <h4>Kontak</h4>
+      <a href="tel:+623123456789">0812-3456-7890</a>
+      <a href="#pesan">WA: @ayamsenthil</a>
+      <p>Jl. Ijen No. 42, Malang</p>
+    </div>
+
+    <div class="footer__col">
+      <h4>Ikuti</h4>
+      <a href="#top">Instagram</a>
+      <a href="#top">TikTok</a>
+      <a href="#top">GoFood</a>
+    </div>
+  </div>
+
+  <div class="wrap footer__bottom">
+    <p>© 2026 Ayam Geprek Senthil. Semua hak dilindungi.</p>
+    <p>Dirancang dengan 🌶️ di Malang.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

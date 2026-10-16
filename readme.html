@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catatan Lomba AI Coding ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Kumpulan Prompt Siap Pakai</title>
+<meta name="description" content="Kumpulan prompt siap pakai untuk lomba AI coding: 6 studi kasus tema Kesehatan, UMKM, Pertanian, template debugging, dan taktik pamungkas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F7F4;
+  --surface:#FFFFFF;
+  --surface-2:#FBFBF9;
+  --line:#E6E4DE;
+  --line-strong:#D5D2C9;
+  --ink:#1B1D1A;
+  --ink-2:#4A4E48;
+  --ink-3:#7C8078;
+  --accent:#0F766E;
+  --accent-ink:#0B5A54;
+  --accent-soft:#E6F2F0;
+  --accent-line:#9CCDC7;
+  --warn-bg:#FDF6DC;
+  --warn-line:#E7CE72;
+  --radius:14px;
+  --radius-sm:9px;
+  --shadow-sm:0 1px 2px rgba(20,24,20,.05);
+  --shadow:0 10px 30px -18px rgba(20,24,20,.35);
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --display:"Bricolage Grotesque",var(--sans);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:112px;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:var(--display);line-height:1.15;letter-spacing:-.015em;margin:0}
+p{margin:0 0 .85em}
+a{color:var(--accent-ink)}
+::selection{background:var(--accent-soft);color:var(--accent-ink)}
+
+/* ---------- skip link ---------- */
+.skip{position:absolute;left:-999px;top:0;z-index:100;background:var(--accent);color:#fff;padding:10px 16px;border-radius:0 0 8px 0}
+.skip:focus{left:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* ---------- topbar ---------- */
+.topbar{
+  position:sticky;top:0;z-index:40;background:rgba(247,247,244,.86);
+  backdrop-filter:saturate(150%) blur(12px);-webkit-backdrop-filter:saturate(150%) blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.topbar__in{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;flex:0 0 auto}
+.brand__mark{width:32px;height:32px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:15px}
+.brand__t{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.02em;white-space:nowrap}
+.brand__t span{color:var(--ink-3);font-weight:600}
+
+.search{position:relative;flex:1 1 260px;min-width:220px}
+.search input{
+  width:100%;font:inherit;font-size:14px;color:var(--ink);
+  background:var(--surface);border:1px solid var(--line-strong);border-radius:999px;
+  padding:9px 40px 9px 36px;box-shadow:var(--shadow-sm);
+}
+.search input::placeholder{color:var(--ink-3)}
+.search input:focus{border-color:var(--accent);background:#fff}
+.search__ico{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--ink-3);font-size:14px;pointer-events:none}
+.search__clr{
+  position:absolute;right:6px;top:50%;transform:translateY(-50%);
+  border:0;background:transparent;color:var(--ink-3);cursor:pointer;font-size:16px;
+  width:28px;height:28px;border-radius:50%;display:none;
+}
+.search__clr:hover{background:var(--surface-2);color:var(--ink)}
+.search.is-filled .search__clr{display:block}
+.count{font-size:12px;color:var(--ink-3);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* ---------- layout ---------- */
+.shell{max-width:1240px;margin:0 auto;padding:28px 20px 90px;display:grid;grid-template-columns:236px minmax(0,1fr);gap:36px;align-items:start}
+.side{position:sticky;top:96px;max-height:calc(100vh - 120px);overflow:auto}
+.side h2{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-family:var(--sans);font-weight:700;margin:0 0 10px 4px}
+.side ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px}
+.side a{
+  display:block;text-decoration:none;color:var(--ink-2);font-size:13.5px;font-weight:500;
+  padding:7px 10px 7px 12px;border-left:2px solid var(--line);border-radius:0 6px 6px 0;
+  transition:background .15s ease,color .15s ease,border-color .15s ease;
+}
+.side a:hover{background:var(--surface);color:var(--ink)}
+.side a.is-active{background:var(--accent-soft);color:var(--accent-ink);border-left-color:var(--accent);font-weight:700}
+.side__tip{margin-top:18px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);font-size:12.5px;color:var(--ink-2);box-shadow:var(--shadow-sm)}
+.side__tip b{color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px 28px 24px;box-shadow:var(--shadow);margin-bottom:30px;
+}
+.hero .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+.hero h1{font-size:clamp(26px,4.4vw,38px);margin:10px 0 12px}
+.hero p{color:var(--ink-2);max-width:64ch}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.chip{font-size:12px;font-weight:600;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+.chip b{color:var(--accent-ink)}
+
+/* ---------- section ---------- */
+.sec{margin-bottom:46px;scroll-margin-top:110px}
+.sec__head{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.sec__num{
+  font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:.1em;
+  color:#fff;background:var(--accent);border-radius:6px;padding:4px 8px;flex:0 0 auto;
+}
+.sec h2{font-size:clamp(20px,2.6vw,25px)}
+.sec__sub{color:var(--ink-3);font-size:14px;margin:0 0 20px;max-width:70ch}
+.sec__tools{margin-left:auto;display:flex;gap:8px}
+
+/* ---------- buttons ---------- */
+.btn{
+  font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;
+  border-radius:999px;border:1px solid transparent;padding:7px 14px;
+  display:inline-flex;align-items:center;gap:7px;white-space:nowrap;
+  transition:background .15s ease,color .15s ease,border-color .15s ease,transform .12s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn--solid{background:var(--accent);color:#fff}
+.btn--solid:hover{background:var(--accent-ink)}
+.btn--ghost{background:var(--surface);color:var(--ink-2);border-color:var(--line-strong)}
+.btn--ghost:hover{background:var(--surface-2);color:var(--ink);border-color:var(--accent)}
+.btn--sm{font-size:11.5px;padding:5px 11px}
+.btn.is-done{background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent-line)}
+
+/* ---------- card ---------- */
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;margin-bottom:14px;box-shadow:var(--shadow-sm);
+  transition:box-shadow .2s ease,border-color .2s ease,transform .2s ease;
+}
+.card:hover{box-shadow:var(--shadow);border-color:var(--line-strong)}
+.card__head{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.card__n{
+  flex:0 0 auto;width:26px;height:26px;border-radius:8px;background:var(--surface-2);
+  border:1px solid var(--line-strong);color:var(--ink-2);
+  font-family:var(--display);font-weight:700;font-size:12.5px;display:grid;place-items:center;
+}
+.card__t{flex:1 1 240px;min-width:0}
+.card__t h3{font-size:16.5px}
+.card__tag{
+  display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent-ink);background:var(--accent-soft);border-radius:5px;padding:2px 7px;margin-bottom:7px;
+}
+.card__act{display:flex;gap:7px;flex:0 0 auto}
+.card__desc{color:var(--ink-2);font-size:14.5px;margin:12px 0 0}
+.card__why{
+  margin:12px 0 0;font-size:13.5px;color:var(--ink-2);
+  border-left:2px solid var(--accent-line);padding:2px 0 2px 12px;
+}
+
+/* ---------- prompt block ---------- */
+.prompt{margin-top:16px;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 var(--radius-sm) var(--radius-sm) 0;background:var(--surface-2);overflow:hidden}
+.prompt__bar{display:flex;align-items:center;gap:10px;padding:8px 10px 8px 12px;border-bottom:1px solid var(--line);background:var(--surface)}
+.lang{
+  font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent-ink);background:var(--accent-soft);border:1px solid var(--accent-line);
+  border-radius:5px;padding:2px 7px;
+}
+.lang--txt{color:var(--ink-2);background:var(--surface-2);border-color:var(--line-strong)}
+.prompt__bar .btn{margin-left:auto}
+.prompt pre{
+  margin:0;padding:14px 16px;overflow-x:auto;
+  font-family:var(--mono);font-size:13px;line-height:1.7;color:var(--ink);
+  white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere;
+}
+.prompt pre code{font:inherit}
+.ph{background:var(--warn-bg);border-bottom:2px solid var(--warn-line);border-radius:3px;padding:0 3px;color:#6B5310}
+
+/* ---------- notes / callout ---------- */
+.note{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent-line);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:14px 16px;margin-bottom:14px;font-size:14.5px;color:var(--ink-2)}
+.note b,.note strong{color:var(--ink)}
+.note h4{font-family:var(--display);font-size:15px;color:var(--ink);margin:0 0 6px}
+.note ol,.note ul{margin:6px 0 0;padding-left:20px}
+.note li{margin-bottom:4px}
+.rules{list-style:none;margin:0;padding:0;display:grid;gap:9px;grid-template-columns:minmax(0,1fr)}
+.rules li{position:relative;padding-left:24px;font-size:14.5px;color:var(--ink-2);overflow-wrap:anywhere}
+.rules li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--accent);font-weight:700}
+
+/* ---------- weights table ---------- */
+.weights{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));margin-bottom:20px}
+.wt{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 16px;box-shadow:var(--shadow-sm)}
+.wt__bar{height:5px;border-radius:99px;background:var(--surface-2);border:1px solid var(--line);margin:9px 0 8px;overflow:hidden}
+.wt__fill{height:100%;background:var(--accent);border-radius:99px}
+.wt__t{font-family:var(--display);font-weight:700;font-size:14.5px}
+.wt__v{font-size:12.5px;color:var(--ink-3);font-weight:700}
+.wt p{font-size:13px;color:var(--ink-2);margin:0}
+
+/* ---------- checklist ---------- */
+.grid2{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+
+/* ---------- empty ---------- */
+.empty{display:none;text-align:center;padding:46px 20px;color:var(--ink-3)}
+.empty.is-on{display:block}
+.empty b{display:block;color:var(--ink);font-family:var(--display);font-size:16px;margin-bottom:4px}
+
+/* ---------- footer ---------- */
+.foot{border-top:1px solid var(--line);margin-top:44px;padding-top:20px;font-size:13px;color:var(--ink-3);display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+
+/* ---------- toast ---------- */
+.toasts{position:fixed;right:16px;bottom:16px;z-index:80;display:flex;flex-direction:column;gap:9px;align-items:flex-end;pointer-events:none}
+.toast{
+  display:flex;align-items:center;gap:10px;
+  background:var(--ink);color:#F4F5F2;border-radius:10px;
+  padding:10px 15px;font-size:13.5px;font-weight:600;
+  box-shadow:0 18px 40px -18px rgba(0,0,0,.6);
+  opacity:0;transform:translateY(10px) scale(.97);
+  transition:opacity .2s ease,transform .2s ease;
+  max-width:min(92vw,340px);
+}
+.toast.is-on{opacity:1;transform:none}
+.toast__ico{
+  flex:0 0 auto;width:20px;height:20px;border-radius:50%;
+  background:var(--accent);color:#fff;display:grid;place-items:center;font-size:11px;
+}
+.toast--err{background:#7A1F1F}
+.toast--err .toast__ico{background:#E4A0A0;color:#5A1414}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .shell{grid-template-columns:minmax(0,1fr);gap:22px;padding:22px 16px 80px}
+  .side{
+    position:static;max-height:none;overflow:visible;
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);
+    padding:12px 14px;box-shadow:var(--shadow-sm);
+  }
+  .side ol{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px}
+  .side a{border-left:0;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:12.5px;text-align:center}
+  .side a.is-active{border-color:var(--accent)}
+  .side__tip{margin-top:12px}
+  html{scroll-padding-top:150px}
+  .sec{scroll-margin-top:150px}
+  .hero{padding:22px 20px}
+  .card{padding:16px}
+  .sec__tools{margin-left:0;width:100%}
+}
+@media (max-width:560px){
+  .topbar__in{gap:10px;padding:10px 14px}
+  .brand__t{font-size:14.5px}
+  .search{flex:1 1 140px;min-width:0}
+  .count{display:none}
+  .prompt pre{font-size:12.5px;padding:12px 13px}
+  .card__act{width:100%}
+  .card__act .btn{flex:1 1 auto;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important;scroll-behavior:auto !important}
+}
+@media print{
+  .topbar,.side,.toasts,.card__act,.sec__tools{display:none !important}
+  .shell{grid-template-columns:1fr;padding:0}
+  .card,.hero,.note{box-shadow:none;break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Lompat ke konten</a>
+
+<header class="topbar">
+  <div class="topbar__in">
+    <a class="brand" href="#top">
+      <span class="brand__mark" aria-hidden="true">P</span>
+      <span class="brand__t">Catatan Lomba <span>AI Coding</span></span>
+    </a>
+    <div class="search" id="searchWrap">
+      <span class="search__ico" aria-hidden="true">&#9906;</span>
+      <label class="skip" for="q">Cari prompt</label>
+      <input id="q" type="search" placeholder="Cari tema, studi kasus, atau kata kunci&hellip;" autocomplete="off" aria-describedby="count">
+      <button class="search__clr" id="qClear" type="button" aria-label="Bersihkan pencarian">&times;</button>
+    </div>
+    <span class="count" id="count" aria-live="polite"></span>
+  </div>
+</header>
+
+<div class="shell">
+
+  <!-- ============ SIDEBAR ============ -->
+  <nav class="side" aria-label="Daftar isi dokumen">
+    <h2>Daftar Isi</h2>
+    <ol id="toc">
+      <li><a href="#tema1">Tema 1 &mdash; Kesehatan</a></li>
+      <li><a href="#tema2">Tema 2 &mdash; UMKM</a></li>
+      <li><a href="#tema3">Tema 3 &mdash; Pertanian</a></li>
+      <li><a href="#tips">Tips Eksekusi Cepat</a></li>
+      <li><a href="#debug">Template Debugging</a></li>
+      <li><a href="#rules">Golden Rules Debugging</a></li>
+      <li><a href="#senjata">5 Senjata Prompt</a></li>
+      <li><a href="#taktik">Taktik Pamungkas (Skor)</a></li>
+      <li><a href="#eksekusi">Saran Eksekusi Ekstra</a></li>
+      <li><a href="#presentasi">Prompt Presentasi (Bonus)</a></li>
+    </ol>
+    <p class="side__tip"><b>Cara pakai:</b> klik <b>Salin</b> di blok prompt mana pun, lalu tempel ke Gemini. Bagian dalam kurung siku <b>[&hellip;]</b> wajib diganti sesuai konteks proyekmu.</p>
+  </nav>
+
+  <!-- ============ MAIN ============ -->
+  <main id="main">
+  <span id="top"></span>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="eyebrow">Dokumen referensi &middot; siap pakai</span>
+    <h1>Catatan Lomba AI Coding</h1>
+    <p>Kumpulan prompt yang sudah dirapikan dari catatan kasar: 6 studi kasus dari 3 tema, template debugging, 5 senjata prompt untuk seluruh siklus pengembangan, sampai taktik pamungkas per bobot penilaian juri. Semua blok prompt bisa disalin sekali klik.</p>
+    <div class="chips">
+      <span class="chip"><b>6</b> studi kasus prompt</span>
+      <span class="chip"><b>3</b> template debugging</span>
+      <span class="chip"><b>5</b> senjata prompt</span>
+      <span class="chip"><b>4</b> kriteria skor pamungkas</span>
+      <span class="chip"><b>1</b> prompt materi presentasi</span>
+      <span class="chip">PHP Native &middot; MySQL &middot; Tailwind CDN</span>
+    </div>
+  </section>
+
+  <div class="empty" id="empty">
+    <b>Tidak ada prompt yang cocok</b>
+    <span>Coba kata kunci lain, atau bersihkan pencarian.</span>
+  </div>
+
+  <!-- ============ TEMA 1 ============ -->
+  <section class="sec" id="tema1">
+    <div class="sec__head"><span class="sec__num">TEMA 1</span><h2>Kesehatan</h2>
+      <div class="sec__tools"><button class="btn btn--ghost btn--sm" data-copy-section>Syalin Semua Bagian</button></div>
+    </div>
+    <p class="sec__sub">Dua studi kasus dengan palet warna &ldquo;trust &amp; health&rdquo;: nuansa tenang, ramah, dan enak dibaca.</p>
+
+    <article class="card" data-key="portal gizi kesehatan remaja bmi tealcalculate calculator">
+      <div class="card__head">
+        <span class="card__n">1</span>
+        <div class="card__t">
+          <span class="card__tag">Studi Kasus</span>
+          <h3>Portal Gizi &amp; Kesehatan Remaja</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Halaman utama dengan Hero Section, grid kartu artikel, dan kalkulator BMI mini.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Bertindaklah sebagai Expert UI/UX Designer dan Frontend Developer. Buatkan saya kode index.php lengkap untuk halaman utama aplikasi Portal Gizi &amp; Kesehatan Remaja.
+
+Spesifikasi Teknis:
+Gunakan HTML5 dan Tailwind CSS via CDN (<span class="ph">&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</span>).
+Gunakan FontAwesome CDN untuk ikon.
+
+Desain Visual &amp; Vibe (Sangat Penting):
+Warna: Gunakan palet warna yang segar dan energik (Teal / teal-500, Putih bersih, dan sedikit aksen Orange).
+Nuansa: Modern, clean, dan ramah Gen-Z.
+
+Komponen UI: Buat Hero Section dengan Call to Action "Cek Status Gizimu", diikuti dengan Grid System (3 kolom di desktop, 1 di mobile) untuk menampilkan kartu artikel kesehatan dengan efek hover yang halus (hover:-translate-y-1 hover:shadow-lg).
+
+Inovasi Wajib:
+Tambahkan satu seksi interaktif berupa desain UI "Kalkulator BMI Mini" (input tinggi &amp; berat badan) di halaman tersebut yang terlihat estetik.</code></pre>
+      </div>
+    </article>
+
+    <article class="card" data-key="jadwal minum obat dashboard toggle kepatuhan biru">
+      <div class="card__head">
+        <span class="card__n">2</span>
+        <div class="card__t">
+          <span class="card__tag">Studi Kasus</span>
+          <h3>Jadwal Minum Obat</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Dashboard mobile-first untuk orang tua: daftar obat harian + metrik kepatuhan minum obat.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Bertindaklah sebagai Expert UI/UX Designer. Buatkan saya antarmuka pengguna index.php untuk aplikasi web Jadwal Minum Obat.
+
+Spesifikasi Teknis:
+Wajib menggunakan Tailwind CSS via CDN dan FontAwesome.
+
+Desain Visual &amp; Vibe (Sangat Penting):
+Warna: Gunakan palet warna medis yang menenangkan (Biru Lembut / blue-100 untuk background, Biru Tua / blue-600 untuk elemen utama, dan aksen Hijau / green-500 untuk status sukses).
+Nuansa: Minimalis, trustworthy, dan sangat mudah dibaca oleh orang tua (high contrast).
+
+Komponen UI: Layout bergaya Dashboard yang mobile-first. Buat daftar obat hari ini menggunakan komponen List/Card horizontal. Setiap kartu obat harus memiliki tombol/checkbox besar (Tailwind toggle) untuk menandai "Sudah Diminum".
+
+Inovasi Wajib:
+Di bagian atas aplikasi, buatkan UI Progress Bar melingkar atau memanjang (menggunakan utility Tailwind) yang menunjukkan metrik "Kepatuhan Minum Obat Hari Ini (Misal: 75%)".</code></pre>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ TEMA 2 ============ -->
+  <section class="sec" id="tema2">
+    <div class="sec__head"><span class="sec__num">TEMA 2</span><h2>UMKM</h2>
+      <div class="sec__tools"><button class="btn btn--ghost btn--sm" data-copy-section>Syalin Semua Bagian</button></div>
+    </div>
+    <p class="sec__sub">Nuansa marketplace modern: hangat, menggugah selera, dan menonjolkan foto produk.</p>
+
+    <article class="card" data-key="katalog produk umkm lokal amber marketplace whatsapp">
+      <div class="card__head">
+        <span class="card__n">3</span>
+        <div class="card__t">
+          <span class="card__tag">Studi Kasus</span>
+          <h3>Katalog Produk UMKM Lokal</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Galeri produk responsif dengan search bar dominan, badge Produk Lokal, dan fitur UMKM of the Month.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Bertindaklah sebagai Expert Web Developer. Saya butuh antarmuka index.php untuk aplikasi Katalog Produk UMKM Lokal.
+
+Spesifikasi Teknis:
+Gunakan HTML5 dan Tailwind CSS via CDN. Tambahkan konfigurasi di dalam tag &lt;script&gt; Tailwind untuk menambahkan warna kustom (opsional jika diperlukan).
+
+Desain Visual &amp; Vibe (Sangat Penting):
+Warna: Warm &amp; Welcoming (Gunakan perpaduan Amber / amber-500 atau kuning hangat dengan latar belakang gray-50).
+Nuansa: Menggugah selera/menarik (seperti marketplace modern), menonjolkan foto produk.
+
+Komponen UI: Navbar dengan Search Bar yang dominan. Di bawahnya, buat Grid Gallery responsif (2 kolom mobile, 4 kolom desktop). Kartu produk harus memiliki badge "Produk Lokal" (rounded-full), harga yang dicoret untuk diskon, dan tombol "Pesan via WhatsApp".
+
+Inovasi Wajib:
+Sediakan bagian UI "UMKM of the Month" dengan layout menyamping (side-by-side foto dan deskripsi) yang terlihat premium dengan drop shadow elegan.</code></pre>
+      </div>
+    </article>
+
+    <article class="card" data-key="sistem kasir pos point of sale split screen cart indigo">
+      <div class="card__head">
+        <span class="card__n">4</span>
+        <div class="card__t">
+          <span class="card__tag">Studi Kasus</span>
+          <h3>Sistem Kasir Sederhana (POS)</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Layar terbagi 70/30: grid produk besar di kiri, struk belanja vertikal dengan tombol bayar raksasa di kanan.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Bertindaklah sebagai Senior Frontend Engineer. Buatkan desain UI/UX untuk aplikasi Sistem Kasir Sederhana (Point of Sale) khusus UMKM.
+
+Spesifikasi Teknis:
+Gunakan Tailwind CSS via CDN dan ikon yang relevan.
+
+Desain Visual &amp; Vibe (Sangat Penting):
+Warna: Profesional namun tidak kaku (Latar abu-abu terang gray-100, Aksen tombol Biru Nila indigo-600).
+Nuansa: Fungsional, cepat digunakan (rapid action), dan rapi.
+
+Komponen UI: Layout layar terbagi (Split Screen Layout). Sebelah kiri (70% lebar) menampilkan grid kotak-kotak besar berisi menu/produk yang mudah di-tap (touch-friendly). Sebelah kanan (30% lebar) adalah struk belanja vertikal (Cart) dengan daftar item, total harga, dan tombol "Bayar Sekarang" yang sangat besar dan mencolok.
+
+Inovasi Wajib:
+Tambahkan tab navigation di atas daftar produk (Tailwind tabs) untuk memfilter kategori dengan cepat (misal: Makanan, Minuman, Snack).</code></pre>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ TEMA 3 ============ -->
+  <section class="sec" id="tema3">
+    <div class="sec__head"><span class="sec__num">TEMA 3</span><h2>Pertanian</h2>
+      <div class="sec__tools"><button class="btn btn--ghost btn--sm" data-copy-section>Syalin Semua Bagian</button></div>
+    </div>
+    <p class="sec__sub">Nuansa earthy dan data-driven: hijau zamrud, coklat tanah, dan latar krem lembut.</p>
+
+    <article class="card" data-key="monitoring kebun dashboard smart farming-summary cards">
+      <div class="card__head">
+        <span class="card__n">5</span>
+        <div class="card__t">
+          <span class="card__tag">Studi Kasus</span>
+          <h3>Monitoring Kebun</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Dashboard sidebar dengan 4 summary cards (kelembaban tanah, suhu udara, intensitas cahaya, status pompa air).</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Bertindaklah sebagai Data UI Designer. Buatkan saya antarmuka Dashboard index.php untuk aplikasi Monitoring Kebun.
+
+Spesifikasi Teknis:
+Ciptakan layout satu halaman menggunakan HTML dan Tailwind CSS via CDN.
+
+Desain Visual &amp; Vibe (Sangat Penting):
+Warna: Nuansa Alam/Earthy (Hijau Zamrud emerald-600, Coklat Tanah stone-600, dan latar belakang putih/krem lembut bg-[#F8FAF5]).
+Nuansa: Berbasis data (Data-driven), modern, smart farming.
+
+Komponen UI: Sidebar navigasi di kiri, dan Main Content di kanan. Buat 4 Summary Cards berjejer di bagian atas yang menampilkan ikon dan angka untuk: Kelembaban Tanah, Suhu Udara, Intensitas Cahaya, dan Status Pompa Air. Beri efek glassmorphism atau soft shadow pada kartu.
+
+Inovasi Wajib:
+Tambahkan satu card besar di bawahnya sebagai area placeholder untuk grafik historis penyiraman (berikan area div dengan latar abu-abu dan teks 'Grafik Chart.js Area' di tengahnya).</code></pre>
+      </div>
+    </article>
+
+    <article class="card" data-key="jadwal tanam panen timeline kalender kalkulator panen">
+      <div class="card__head">
+        <span class="card__n">6</span>
+        <div class="card__t">
+          <span class="card__tag">Studi Kasus</span>
+          <h3>Jadwal Tanam &amp; Panen</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Timeline vertikal dengan badge per fase, ditambah floating card &ldquo;Kalkulator Panen&rdquo;.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Bertindaklah sebagai Expert UI/UX Designer. Saya membuat aplikasi Jadwal Tanam &amp; Panen untuk petani lokal. Buatkan kode index.php-nya.
+
+Spesifikasi Teknis:
+Gunakan Tailwind CSS via CDN secara maksimal.
+
+Desain Visual &amp; Vibe (Sangat Penting):
+Warna: Hijau Daun (green-600) berpadu dengan kuning cerah (yellow-400) untuk penanda masa panen.
+Nuansa: Informatif, jelas, dan mirip dengan aplikasi manajemen proyek/kalender (Timeline).
+
+Komponen UI: Buat UI berkonsep Timeline vertikal atau Kalender (menggunakan border-l di Tailwind untuk membuat garis waktu). Setiap node/item di kalender menampilkan fase (Masa Tanam, Pemupukan, Perkiraan Panen) dengan warna badge yang berbeda-beda.
+
+Inovasi Wajib:
+Buat UI form sederhana bergaya floating card dengan judul "Kalkulator Panen": berisi input pilihan jenis tanaman dan tanggal tanam, beserta tombol "Hitung Estimasinya" yang eye-catching.</code></pre>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ TIPS EKSEKUSI ============ -->
+  <section class="sec" id="tips">
+    <div class="sec__head"><span class="sec__num">LANGKAH</span><h2>Tips Eksekusi Cepat Saat Lomba</h2>
+      <div class="sec__tools"><button class="btn btn--ghost btn--sm" data-copy-section>Syalin Semua Bagian</button></div>
+    </div>
+    <p class="sec__sub">Setelah Anda mendapatkan hasil dari prompt di atas, Anda sudah mengamankan tampilan UI/UX yang solid (Vibe 30%). Selanjutnya, pecah kode tersebut menjadi prompt lanjutan yang jauh lebih pendek.</p>
+
+    <div class="note">
+      <h4>Masalah paling sering menjatuhkan peserta</h4>
+      <p>Masalah AI kehilangan konteks (halusinasi) di tengah proses coding adalah hal yang paling sering menjatuhkan peserta dalam kompetisi AI coding. Untuk menjaga Skor Kualitas Prompt (25%) dan Fungsionalitas (25%), prompt debugging Anda tidak boleh hanya berbunyi <em>&ldquo;Tampilannya error, tolong perbaiki&rdquo;</em>.</p>
+      <p>Anda harus selalu menyertakan <b>Konteks Ulang + Gejala + Log Error/Kode Tersangka</b>.</p>
+    </div>
+
+    <article class="card" data-key="pecah kode prompt lanjutan php nativeBMI hitung.php">
+      <div class="card__head">
+        <span class="card__n">A</span>
+        <div class="card__t"><h3>Prompt Lanjutan: memecah kode jadi backend</h3></div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Bagus, sekarang berikan saya kode PHP native untuk memproses input Kalkulator BMI di dalam form tersebut, gunakan nama file hitung.php</code></pre>
+      </div>
+    </article>
+
+    <article class="card" data-key="lanjutkan kode terpotong panjang respon">
+      <div class="card__head">
+        <span class="card__n">B</span>
+        <div class="card__t"><h3>Prompt Lanjutan: kode terpotong di tengah jalan</h3></div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Gemini biasanya berhenti mengetik di tengah (batas panjang respon). Balas dengan perintah ini agar kode tidak rusak saat di-copy.</p>
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Lanjutkan kodemu yang terpotong mulai dari baris <span class="ph">&lt;div class="..."</span> agar kode tidak rusak saat di-copy.</code></pre>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ TEMPLATE DEBUGGING ============ -->
+  <section class="sec" id="debug">
+    <div class="sec__head"><span class="sec__num">DEBUG</span><h2>3 Template Prompt Debugging Jitu</h2>
+      <div class="sec__tools"><button class="btn btn--ghost btn--sm" data-copy-section>Syalin Semua Bagian</button></div>
+    </div>
+    <p class="sec__sub">Salin-templet ini besok saat menghadapi masalah. Isi bagian dalam kurung siku <span class="ph">[&hellip;]</span> sesuai kondisi nyata.</p>
+
+    <article class="card" data-key="debugging ui ux tampilan berantakan tailwind grid responsif">
+      <div class="card__head">
+        <span class="card__n">1</span>
+        <div class="card__t">
+          <span class="card__tag">Debugging UI/UX</span>
+          <h3>Tampilan Berantakan</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Biasanya terjadi karena class Tailwind ada yang konflik, struktur <code>div</code> ada yang belum tertutup, atau efek responsif (mobileÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“desktop) gagal berfungsi.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Konteks: Ingat, kita sedang membangun antarmuka <span class="ph">[Sebutkan Nama Halaman, misal: Katalog Produk UMKM]</span> menggunakan murni HTML dan Tailwind CSS via CDN. Tidak ada CSS eksternal.
+
+Masalah: Tampilannya berantakan. <span class="ph">[Jelaskan spesifik, misal: Bagian grid kartu produk malah menumpuk ke bawah (stacked) di layar laptop, padahal seharusnya sejajar 4 kolom ke samping. Selain itu, tombol 'Beli' ukurannya jadi terlalu besar.]</span>
+
+Kode Saat Ini:
+
+<span class="lang copy-hide" style="display:inline-block">HTML</span>
+<span class="ph">[PASTE KODE HTML BAGIAN YANG BERANTAKAN SAJA DI SINI, BUKAN SELURUH HALAMAN]</span>
+
+Tugas: Tolong perbaiki class Tailwind pada elemen tersebut. Pastikan menggunakan utility class yang tepat untuk grid (grid-cols-4) dan perbaiki ukuran tombolnya agar proporsional. Berikan hanya kode yang sudah diperbaiki.</code></pre>
+      </div>
+    </article>
+
+    <article class="card" data-key="debugging logika php database fatal errorÃƒÂ§Ã‚Â©Ã‚ÂºÃƒÂ§Ã¢â€žÂ¢Ã‚Â½ mysqli prepared">
+      <div class="card__head">
+        <span class="card__n">2</span>
+        <div class="card__t">
+          <span class="card__tag">Logika / Fungsionalitas</span>
+          <h3>Fungsi PHP / Database Gagal</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Gunakan ini jika terjadi Fatal Error, halaman blank putih, data gagal tersimpan ke database, atau fungsi hitung-hitungan tidak muncul.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Konteks: Kita sedang mengerjakan fungsionalitas <span class="ph">[Sebutkan Nama Fitur, misal: Simpan Data Panen Pertanian]</span> menggunakan PHP Native dan MySQLi.
+
+Masalah: Fungsi tidak berjalan. Saat saya klik tombol submit, <span class="ph">[Jelaskan gejalanya, misal: data tidak masuk ke database]</span> dan muncul pesan error berikut di browser:
+
+Pesan Error:
+<span class="ph">[PASTE PESAN ERROR DARI BROWSER DI SINI, misal: Parse error: syntax error, unexpected '}' in...]</span>
+
+Kode Eksekusi:
+
+<span class="lang copy-hide" style="display:inline-block">PHP</span>
+<span class="ph">[PASTE KODE PHP YANG MEMPROSES LOGIKA TERSEBUT DI SINI]</span>
+
+Tugas: Analisis penyebab error tersebut. Tolong perbaiki baris kode yang salah dengan tetap mempertahankan nama variabel ($) dan struktur tabel yang sudah ada. Jangan mengubah stack teknologi kita.</code></pre>
+      </div>
+    </article>
+
+    <article class="card" data-key="suntik konteksConstraints lupa ingat python react framework teguran halus">
+      <div class="card__head">
+        <span class="card__n">3</span>
+        <div class="card__t">
+          <span class="card__tag">Suntik Konteks</span>
+          <h3>Saat AI Benar-Benar Lupa Ingatan</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Terkadang jika chat sudah terlalu panjang, Gemini tiba-tiba memberikan kode dalam bahasa Python, React, atau framework lain yang tidak Anda minta. Gunakan prompt &ldquo;Teguran Halus&rdquo; ini.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>STOP. Kamu kehilangan konteks.
+
+Ingat kembali aturan proyek kita:
+- Kita HANYA menggunakan PHP Native untuk backend.
+- Kita HANYA menggunakan HTML5 murni dan Tailwind CSS via CDN untuk frontend.
+- Database kita adalah MySQL.
+- Jangan menggunakan React, Node.js, atau framework lain.
+
+Kita sedang memperbaiki fitur <span class="ph">[Sebutkan Fitur]</span> di file <span class="ph">[Sebutkan Nama File]</span>. Berdasarkan batasan ini, tolong tulis ulang solusi untuk masalah sebelumnya: <span class="ph">[Sebutkan ulang masalahnya secara singkat]</span>.</code></pre>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ GOLDEN RULES ============ -->
+  <section class="sec" id="rules">
+    <div class="sec__head"><span class="sec__num">ATURAN</span><h2>Golden Rules Saat Debugging dengan Gemini</h2></div>
+    <p class="sec__sub">Aturan sederhana yang mencegah AI menulis ulang seluruh halaman Anda dengan gaya berbeda.</p>
+
+    <div class="note">
+      <ul class="rules">
+        <li><b>Jangan kirim seluruh isi file</b> (ribuan baris). Kirimkan hanya blok fungsi PHP atau blok HTML (<code>&lt;div id="target"&gt;&hellip;&lt;/div&gt;</code>) yang bermasalah.</li>
+        <li>Mengirim kode terlalu panjang membuat AI &ldquo;pusing&rdquo; dan memperbesar risiko dia menulis ulang seluruh halaman dengan gaya yang berbeda, yang akan merusak desain Anda sebelumnya.</li>
+        <li><b>Undefined Variable:</b> AI sering lupa variabel apa yang dia buat 3 prompt yang lalu ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â lihat contoh prompt di bawah.</li>
+      </ul>
+    </div>
+
+    <article class="card" data-key="undefined variable post form menangkap variabel">
+      <div class="card__head">
+        <span class="card__n">+</span>
+        <div class="card__t"><h3>Contoh: Menangani &ldquo;Undefined Variable&rdquo;</h3></div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Error undefined variable <span class="ph">$nama_produk</span>. Variabel ini seharusnya diambil dari metode POST form sebelumnya. Tolong perbaiki cara penangkapannya.</code></pre>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ SENJATA PROMPT ============ -->
+  <section class="sec" id="senjata">
+    <div class="sec__head"><span class="sec__num">SENJATA</span><h2>5 Senjata Prompt Siap Pakai</h2>
+      <div class="sec__tools"><button class="btn btn--ghost btn--sm" data-copy-section>Syalin Semua Bagian</button></div>
+    </div>
+    <p class="sec__sub">Persiapan matang adalah kunci. Simpan prompt ini di Notepad atau VS Code agar besok tinggal copy-paste dan sesuaikan bagian di dalam kurung siku <span class="ph">[&hellip;]</span>. Kumpulan ini mencakup seluruh siklus pengembangan aplikasi, dari database hingga fitur inovatif.</p>
+
+    <article class="card" data-key="arsitektur keamanan database sql pdomysqli prepared statement 25">
+      <div class="card__head">
+        <span class="card__n">1</span>
+        <div class="card__t">
+          <span class="card__tag">Fungsionalitas &middot; 25%</span>
+          <h3>Arsitektur &amp; Keamanan Database</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Gunakan prompt ini di awal setelah Anda mendapat tema. Memberikan fondasi backend yang solid dan aman.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Bertindaklah sebagai Senior Backend Developer. Saya sedang membangun aplikasi <span class="ph">[Sebutkan Nama Aplikasi/Tema]</span> menggunakan PHP Native dan basis data MySQL.
+
+Tugas:
+1. Buatkan skrip SQL (.sql) lengkap untuk membuat database dan 3 tabel utama yang saling berelasi, beserta dummy data (minimal 3 baris per tabel).
+2. Buatkan file koneksi.php menggunakan pendekatan yang aman (disarankan PDO atau MySQLi dengan Prepared Statements).
+
+Batasan: Pastikan tipe data efisien (misal: gunakan INT untuk ID, VARCHAR secukupnya, TIMESTAMP untuk waktu input). Sertakan komentar penjelasan di setiap baris penting.</code></pre>
+      </div>
+    </article>
+
+    <article class="card" data-key="crud integrasi ui tailwind while looping mysqli 55">
+      <div class="card__head">
+        <span class="card__n">2</span>
+        <div class="card__t">
+          <span class="card__tag">Desain &amp; Fungsi &middot; 55%</span>
+          <h3>Integrasi CRUD ke UI Tailwind</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Seringkali AI membuat logika PHP yang bagus, tapi merusak desain Tailwind Anda. Gunakan prompt ini untuk menyatukan keduanya dengan rapi.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Tugas: Buatkan proses CRUD (Create, Read, Update, Delete) menggunakan PHP Native untuk modul <span class="ph">[Sebutkan Modul, misal: Data Produk / Data Pasien]</span>.
+
+Spesifikasi:
+- Saya sudah memiliki template UI menggunakan Tailwind CSS via CDN.
+- Berikut adalah kode HTML untuk tabel/grid penampil datanya:
+
+<span class="lang copy-hide" style="display:inline-block">HTML</span>
+<span class="ph">[PASTE KODE HTML TAILWIND ANDA DI SINI]</span>
+
+Tolong sisipkan logika looping while PHP dari database (MySQLi) langsung ke dalam elemen HTML tersebut agar data dinamis muncul tanpa merusak kelas Tailwind yang sudah ada. Berikan kode lengkap yang siap jalan.</code></pre>
+      </div>
+    </article>
+
+    <article class="card" data-key="anti hack sql injection xss htmlspecialchars bind_param">
+      <div class="card__head">
+        <span class="card__n">3</span>
+        <div class="card__t">
+          <span class="card__tag">Nilai Teknis Juri</span>
+          <h3>Keamanan Anti-Hack</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Juri teknis sangat menyukai peserta yang memikirkan keamanan, meskipun aplikasinya sederhana. Eksekusi ini setelah fitur utama berjalan.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Konteks: Saya memiliki file proses_simpan.php berikut yang menangani input form dari user.
+
+<span class="lang copy-hide" style="display:inline-block">PHP</span>
+<span class="ph">[PASTE KODE PHP PROSES SIMPAN ANDA DI SINI]</span>
+
+Tugas: Tolong modifikasi kode PHP tersebut agar sepenuhnya aman dari celah SQL Injection dan XSS (Cross-Site Scripting). Gunakan Prepared Statements (bind_param) dan fungsi sanitasi bawaan PHP seperti htmlspecialchars(). Jangan ubah nama variabel POST yang datang dari form.</code></pre>
+      </div>
+    </article>
+
+    <article class="card" data-key="innovasi wow factor chart.js bar doughnut dashboard summary 20">
+      <div class="card__head">
+        <span class="card__n">4</span>
+        <div class="card__t">
+          <span class="card__tag">Inovasi &amp; Kreativitas &middot; 20%</span>
+          <h3>Inovasi &ldquo;Wow Factor&rdquo;</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Mengingat Anda memiliki pengalaman dengan grafik analitik, mengintegrasikan fitur visualisasi data akan langsung mendongkrak skor Inovasi secara signifikan.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Bertindaklah sebagai Data Visualization Expert. Saya ingin menambahkan fitur Dashboard Summary pada aplikasi <span class="ph">[Sebutkan Tema]</span> saya.
+
+Tugas:
+1. Buatkan kode HTML/JS menggunakan library Chart.js via CDN.
+2. Buat satu grafik <span class="ph">[Pilih: Bar Chart / Doughnut Chart]</span> yang estetik dan sesuai dengan vibe warna Tailwind saya (misal: teal dan amber).
+3. Grafik ini harus menampilkan data: <span class="ph">[Sebutkan datanya, misal: Jumlah panen per bulan / Kategori produk terlaris]</span>.
+4. Berikan juga contoh skrip PHP sederhana di atasnya untuk mengambil data dari tabel MySQL agar array datanya dinamis masuk ke dalam Chart.js.</code></pre>
+      </div>
+    </article>
+
+    <article class="card" data-key="mobile responsiveness check hamburger grid cols md lg">
+      <div class="card__head">
+        <span class="card__n">5</span>
+        <div class="card__t">
+          <span class="card__tag">Pemolesan Akhir</span>
+          <h3>Mobile Responsiveness Check</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Lakukan ini di 30 menit terakhir lomba untuk memastikan desain Anda sempurna di mata juri saat mereka mengujinya di berbagai perangkat.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Konteks: Ini adalah kode halaman utama aplikasi saya menggunakan Tailwind CSS via CDN.
+
+<span class="lang copy-hide" style="display:inline-block">HTML</span>
+<span class="ph">[PASTE KODE KESELURUHAN INDEX.PHP ANDA DI SINI]</span>
+
+Tugas: Tolong periksa dan sempurnakan class Tailwind-nya agar 100% responsif.
+- Pastikan navbar berubah menjadi hamburger menu di layar mobile.
+- Pastikan susunan grid berubah dari 3-4 kolom (di Desktop) menjadi 1 kolom penuh (di layar Mobile/Smartphone).
+- Jangan hapus elemen apa pun, cukup tambahkan atau modifikasi utility class Tailwind seperti md:, lg:, flex-col, dll.
+
+Berikan kode finalnya.</code></pre>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ TAKTIK PAMUNGAKAS ============ -->
+  <section class="sec" id="taktik">
+    <div class="sec__head"><span class="sec__num">SKOR</span><h2>Taktik Pamungkas per Kriteria</h2>
+      <div class="sec__tools"><button class="btn btn--ghost btn--sm" data-copy-section>Syalin Semua Bagian</button></div>
+    </div>
+    <p class="sec__sub">Untuk menyapu bersih poin berdasarkan bobot kriteria tersebut, eksekusi Anda harus sangat terukur. Karena Desain Visual &amp; Vibe memegang porsi terbesar (30%), diikuti Kualitas Prompt (25%) dan Fungsionalitas (25%), strategi prompting Anda harus langsung membidik keempat aspek ini secara simultan.</p>
+
+    <div class="weights">
+      <div class="wt"><div class="wt__t">Desain Visual &amp; Vibe <span class="wt__v">30%</span></div><div class="wt__bar"><div class="wt__fill" style="width:100%"></div></div><p>Kunci warna sejak prompt pertama, integrasikan aset PNG, dan tambahkan efek premium.</p></div>
+      <div class="wt"><div class="wt__t">Kualitas Prompt <span class="wt__v">25%</span></div><div class="wt__bar"><div class="wt__fill" style="width:83%"></div></div><p>Log prompt bernomor fase + constraint prompting yang tegas.</p></div>
+      <div class="wt"><div class="wt__t">Fungsionalitas <span class="wt__v">25%</span></div><div class="wt__bar"><div class="wt__fill" style="width:83%"></div></div><p>Navigasi tanpa tombol mati, dan responsivitas mobile-first.</p></div>
+      <div class="wt"><div class="wt__t">Inovasi &amp; Kreativitas <span class="wt__v">20%</span></div><div class="wt__bar"><div class="wt__fill" style="width:67%"></div></div><p>Visualisasi data + lapisan keamanan ekstra.</p></div>
+    </div>
+
+    <!-- 1. Desain Visual -->
+    <article class="card" data-key="palet warna spesifik trust health teal slate logo png integrasi aset custom">
+      <div class="card__head">
+        <span class="card__n">1</span>
+        <div class="card__t">
+          <span class="card__tag">Bobot 30%</span>
+          <h3>Desain Visual &amp; Vibe</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Kriteria ini menilai estetika, konsistensi, dan kesesuaian tema. Jangan biarkan Gemini memilih warna secara acak.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt &mdash; Palet Warna Spesifik</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Kunci warna sejak prompt pertama. Jika mendapat tema Kesehatan, instruksikan: "Gunakan palet warna trust &amp; health: background bg-slate-50, primary button bg-teal-600 hover:bg-teal-700, dan text text-slate-800". Konsistensi kelas Tailwind ini bernilai tinggi.</code></pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt &mdash; Integrasi Aset Kustom</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>UI yang hanya berisi teks akan terlihat membosankan. Siapkan beberapa ikon atau logo berformat PNG transparan (tanpa background) malam ini. Saat me-prompt Gemini untuk membuat Navbar atau Hero Section, instruksikan: "Sediakan tag <span class="ph">&lt;img src='assets/logo.png'&gt;</span> di bagian kiri Navbar dengan ukuran <span class="ph">w-12 h-12</span>". Ini langsung mendongkrak estetika visual.</code></pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt &mdash; Kesan "Modern"</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Selalu tambahkan instruksi vibe seperti "Gunakan efek soft shadow (shadow-md) pada setiap kartu produk dan tambahkan transisi halus (transition duration-300 ease-in-out hover:-translate-y-1) saat kartu di-hover" untuk memberikan nuansa premium.</code></pre>
+      </div>
+    </article>
+
+    <!-- 2. Fungsionalitas -->
+    <article class="card" data-key="fungsionalitas navigasi mulus sidebar href responsif mobile first grid cols">
+      <div class="card__head">
+        <span class="card__n">2</span>
+        <div class="card__t">
+          <span class="card__tag">Bobot 25%</span>
+          <h3>Fungsionalitas</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Juri akan menguji kelancaran fitur, navigasi antar halaman, dan responsivitas di berbagai layar.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt &mdash; Navigasi Mulus</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Jangan biarkan ada tombol mati. Instruksikan: "Pastikan semua menu di Sidebar memiliki tautan yang berfungsi (misal <span class="ph">href='index.php?page=dashboard'</span>), jangan gunakan <span class="ph">href='#'</span>."</code></pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt &mdash; Kunci Responsivitas (Mobile-First)</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Periksa kembali kode Tailwind di atas. Pastikan layout grid berubah menjadi 1 kolom (grid-cols-1) di layar mobile (&lt;768px) dan 3 kolom (md:grid-cols-3) di desktop. Berikan kode perbaikannya jika ada yang belum responsif.</code></pre>
+      </div>
+    </article>
+
+    <!-- 3. Kualitas Prompt -->
+    <article class="card" data-key="kualitas prompt log profesional constraint prompting batasan alert tailwind">
+      <div class="card__head">
+        <span class="card__n">3</span>
+        <div class="card__t">
+          <span class="card__tag">Bobot 25%</span>
+          <h3>Kualitas Prompt</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Penilaian berfokus pada efektivitas dan kreativitas Anda dalam berkomunikasi dengan AI. Juri sangat menyukai peserta yang bisa mengendalikan AI, bukan dikendalikan AI.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt &mdash; Format Log Profesional</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Saat menyalin log prompt ke dokumen penyerahan, jangan hanya di-paste mentah-mentah. Berikan judul fase (misal: Fase 1: Inisialisasi Database, Fase 2: Pembuatan UI Tailwind).</code></pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt &mdash; Constraint Prompting</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Buatkan proses input data. BATASAN: Jangan gunakan alert JavaScript bawaan, gunakan alert komponen Tailwind CSS yang muncul di atas form. Jangan ubah struktur tabel database yang sudah disepakati di prompt sebelumnya.</code></pre>
+      </div>
+    </article>
+
+    <!-- 4. Inovasi -->
+    <article class="card" data-key="inovasi kreativitas chart.js bar chart keamanan xss prepared statements">
+      <div class="card__head">
+        <span class="card__n">4</span>
+        <div class="card__t">
+          <span class="card__tag">Bobot 20%</span>
+          <h3>Inovasi &amp; Kreativitas</h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Anda butuh keunikan ide dan fitur tambahan untuk mendukung hasil akhir dan mengunci skor ini. Aplikasi sederhana sering kali melupakan keamanan.</p>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt &mdash; Fitur Analitik (Visualisasi Data)</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Daripada sekadar menampilkan data panen atau penjualan UMKM dalam bentuk tabel biasa, instruksikan Gemini: "Integrasikan Chart.js via CDN. Buatkan satu grafik bar (Bar Chart) interaktif yang merangkum total data dari tabel MySQL ini." Visualisasi grafik selalu dianggap sebagai fitur level lanjut (advanced) oleh juri.</code></pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt &mdash; Keamanan Ekstra (Security)</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Terapkan keamanan Anti-XSS (Cross-Site Scripting) menggunakan htmlspecialchars() dan cegah SQL Injection menggunakan Prepared Statements pada semua form input PHP ini. Menulis hal ini di log prompt membuktikan pemahaman sistem tingkat tinggi.</code></pre>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ EKSEKUSI EKSTRA ============ -->
+  <section class="sec" id="eksekusi">
+    <div class="sec__head"><span class="sec__num">CHECKLIST</span><h2>Saran Eksekusi Ekstra</h2></div>
+    <p class="sec__sub">Langkah praktis sebelum dan selama lomba, termasuk struktur folder yang perlu siap di Laragon.</p>
+
+    <div class="grid2">
+      <div class="note">
+        <h4>Persiapan malam sebelum lomba</h4>
+        <ul class="rules">
+          <li>Jalankan Laragon, buat folder khusus (misal: <code>htdocs/lomba-vibe</code>), dan buka di code editor.</li>
+          <li>Siapkan folder <code>assets/</code> untuk logo/gambar pendukung (PNG transparan) &mdash; jangan membuang waktu mengatur direktori saat lomba sudah berlangsung.</li>
+          <li>Simpan dokumen ini di Notepad atau VS Code agar tinggal copy-paste.</li>
+        </ul>
+      </div>
+      <div class="note">
+        <h4>Selama lomba</h4>
+        <ul class="rules">
+          <li>Selalu catat prompt yang Anda gunakan di <code>log_prompt.txt</code> agar saat juri meminta bukti komunikasi (Skor Log Prompt 25%) Anda bisa menunjukkan struktur prompt yang sangat profesional dan sistematis.</li>
+          <li>Kunci warna di prompt pertama; di akhir setiap sesi pembuatan halaman, gunakan prompt validasi responsivitas.</li>
+          <li>Debugging: kirim potongan kode, bukan seluruh file.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROMPT PRESENTASI ============ -->
+  <section class="sec" id="presentasi">
+    <div class="sec__head"><span class="sec__num">BONUS</span><h2>Materi Presentasi (Pengganti PowerPoint)</h2>
+      <div class="sec__tools"><button class="btn btn--ghost btn--sm" data-copy-section>Syalin Semua Bagian</button></div>
+    </div>
+    <p class="sec__sub">Presentasi yourself saat/demo di depan juri. Banyak peserta hanya melampirkan file <code>.pptx</code>, padahal juri lebih mudah menilai aplikasi yang hidup. Prompt di bawah membuat AI membangun <code>presentasi.html</code> yang meniru rasa slide PPT lengkap dengan transisinya.</p>
+
+    <article class="card" data-key="presentasi.html slide ppt animasi demo juri presentasi yesterday wow factor">
+      <div class="card__head">
+        <span class="card__n">+</span>
+        <div class="card__t">
+          <span class="card__tag">Wow Factor Presentasi</span>
+          <h3>Minta AI membuat file <code>presentasi.html</code></h3>
+        </div>
+        <div class="card__act"><button class="btn btn--solid btn--sm" data-copy>Syalin Prompt</button></div>
+      </div>
+      <p class="card__desc">Gunakan setelah aplikasi utama sudah selesai. Prompt ini meminta AI membuat halaman presentasi terpisah yang merangkum poin-poin web yang sudah kamu buat, lengkap dengan animasi transisi antar slide.</p>
+      <div class="prompt">
+        <div class="prompt__bar"><span class="lang lang--txt">Prompt &mdash; Presentasi Animasi</span><button class="btn btn--solid btn--sm" data-copy>Syalin</button></div>
+        <pre><code>Konteks: Aplikasi <span class="ph">[Sebutkan Nama Aplikasi/Tema]</span> sudah selesai dan terdiri dari beberapa halaman web: <span class="ph">[Sebutkan daftar file halaman, misal: index.php (dashboard), config.php, proses_simpan.php, dan tabel MySQL harvests/data]</span>. Aplikasi ini memakai PHP Native + MySQL, dan styling memakai Tailwind CSS via CDN.
+
+Tugas:
+Buatkan satu file bernama <span class="ph">presentasi.html</span> yang berfungsi sebagai media presentasi pengganti Microsoft PowerPoint untuk/demo aplikasi tersebut di depan juri.
+
+Isi Presentasi (slide):
+1. Slide Judul &mdash; nama aplikasi, nama kelompok, dan tagline singkat.
+2. Slide Latar Belakang &mdash; masalah nyata yang diselesaikan aplikasi ini.
+3. Slide Fitur Utama &mdash; 3&ndash;4 fitur utama, masing-masing dengan ikon dan satu kalimat penjelasan.
+4. Slide Tampilan Aplikasi &mdash; deskripsi atau screenshot tiap halaman penting, sertakan nama file-nya.
+5. Slide Data &mdash; tampilkan statistik ringkas dari database (jumlah data, rata-rata, dan nilai tertinggi) sebagai angka besar yang menarik.
+6. Slide Teknologi &mdash; daftar stack yang dipakai (PHP Native, MySQL, Tailwind CSS, Chart.js) beserta alasan singkat выборnya.
+7. Slide Keamanan &mdash; Prepared Statements anti SQL Injection, sanitasi <span class="ph">htmlspecialchars()</span> anti XSS.
+8. Slide Penutup &mdash; terima kasih dan ajakan demo.
+
+Aturan Animasi (WAJIB, agar terasa seperti slide PowerPoint):
+- Setiap slide muncul dengan transisi masuk yang halus, staggered (judul muncul lebih dulu, lalu subjudul, lalu bullet satu per satu dengan jeda). Gunakan CSS <span class="ph">@keyframes</span> + <span class="ph">animation-delay</span>, atau kelas Tailwind <span class="ph">animate-</span> dengan delay bertahap.
+- Transisi antar slide: gunakan fade + slide, atau zoom-in dengan durasi 400&ndash;700ms dan easing <span class="ph">ease-out</span>. Jangan gunakan transisi yang terlalu cepat atau norak.
+- Bullet list masuk dengan animasi staggered (misal setiap bullet delay 80&ndash;120ms dari bullet sebelumnya).
+- Angka pada slide Data sebaiknya memiliki animasi count-up saat slide tersebut muncul.
+- Hormati <span class="ph">prefers-reduced-motion</span>: matikan semua animasi bila pengguna mengaktifkannya.
+
+Aturan Navigasi & Interaksi:
+- Navigasi dengan tombol &ldquo;Slide Sebelumnya&rdquo; dan &ldquo;Slide Berikutnya&rdquo;, serta support tombol panah kiri/kanan pada keyboard.
+- Tampilkan indikator nomor slide (misal &ldquo;3 / 8&rdquo;) dan progress bar di bawah.
+- Tambahkan transisi saat berpindah slide (tidak boleh langsung kasar cut).
+
+Batasan:
+- Satu file <span class="ph">presentasi.html</span> saja (CSS dan JS ditulis inline di dalam file tersebut), tidak boleh dependensi file lain di luar folder ini, dan boleh memakai CDN untuk Tailwind, FontAwesome, dan Chart.js.
+- Jangan gunakan framework seperti React, Vue, atau Node.js.
+- Jangan mengubah atau merusak file aplikasi asli yang sudah jadi; file presentasi berdiri sendiri sebagai pelengkap.
+- Gunakan palet warna dan vibe yang konsisten dengan aplikasi utama: <span class="ph">[Sebutkan palet warna aplikasi, misal: teal-600, slate-800, white]</span>.
+- Pastikan tampilannya tetap rapi dan responsif di laptop maupun proyektor.
+
+Berikan kode lengkap <span class="ph">presentasi.html</span> yang siap jalan, beserta satu paragraf penjelasan singkat cara membukanya di browser.</code></pre>
+      </div>
+    </article>
+
+    <div class="note">
+      <h4>Kenapa prompt ini bernilai tinggi</h4>
+      <ul class="rules">
+        <li>Presentasi animasi yang estetik langsung terlihat saat demo di depan juri &mdash; ini sering dianggap sebagai nilai <b>Wow Factor</b> yang jarang dipakai peserta lain.</li>
+        <li>Prompt ini ikut mengunci nilai <b>Kualitas Prompt (25%)</b> karena Anda menunjukkan cara berpikir &#8220;materi presentasi&#8221;, bukan sekadar &#8220;buatkan halaman&#8221;.</li>
+        <li>Bisa dijadikan lampiran serialize di <code>log_prompt.txt</code> sebagai bukti bahwa Anda Terus tingkatkan aplikasi sampai tahap presentasi.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>Dibuat dari <code>readme.md</code> &middot; semua blok prompt bisa disalin sekali klik.</span>
+    <button class="btn btn--ghost btn--sm" data-copy-all>Syalin Semua Prompt</button>
+  </footer>
+
+  </main>
+</div>
+
+<div class="toasts" id="toasts" role="status" aria-live="polite" aria-atomic="false"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------------- Toast ---------------- */
+  var toastsEl = document.getElementById("toasts");
+
+  function toast(msg, isErr) {
+    var t = document.createElement("div");
+    t.className = "toast" + (isErr ? " toast--err" : "");
+    var ico = document.createElement("span");
+    ico.className = "toast__ico";
+    ico.setAttribute("aria-hidden", "true");
+    ico.textContent = isErr ? "!" : "\u2713";
+    var txt = document.createElement("span");
+    txt.textContent = msg;
+    t.appendChild(ico);
+    t.appendChild(txt);
+    toastsEl.appendChild(t);
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { t.classList.add("is-on"); });
+    });
+    setTimeout(function () {
+      t.classList.remove("is-on");
+      setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 250);
+    }, 2000);
+  }
+
+  /* ---------------- Copy (Clipboard API + execCommand fallback) ---------------- */
+  function legacyCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.top = "-1000px";
+    ta.style.left = "-1000px";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).catch(function () { return legacyCopy(text); });
+    }
+    return new Promise(function (resolve) {
+      resolve(legacyCopy(text));
+    });
+  }
+
+  var copyBtns = Array.prototype.slice.call(document.querySelectorAll("[data-copy]"));
+
+  copyBtns.forEach(function (btn) {
+    var inPrompt = !!btn.closest(".prompt");
+    var card = btn.closest(".card");
+    var label = "";
+    if (card) {
+      var h = card.querySelector(".card__t h3");
+      if (h) label = h.textContent.replace(/\s+/g, " ").trim();
+    }
+    var what = inPrompt ? "blok prompt" : (card ? "semua prompt di kartu" : "prompt");
+    btn.setAttribute("aria-label", "Salin " + what + (label ? ": " + label : ""));
+    btn.setAttribute("title", "Salin " + what + (label ? ": " + label : ""));
+    /* Kartu dengan beberapa blok prompt: tombolnya berbunyi "Syalin Semua". */
+    if (!inPrompt && card && card.querySelectorAll(".prompt").length > 1) {
+      btn.setAttribute("data-label", btn.textContent);
+      btn.textContent = "Syalin Semua Prompt";
+    }
+  });
+
+  /* blink state */
+  function flash(btn) {
+    var old = btn.getAttribute("data-label") || btn.textContent;
+    btn.setAttribute("data-label", old);
+    btn.classList.add("is-done");
+    btn.textContent = "Tersalin \u2713";
+    setTimeout(function () {
+      btn.classList.remove("is-done");
+      btn.textContent = old;
+    }, 1500);
+  }
+
+  /* Ambil teks prompt tanpa ikutmenyertakan label bahasa (pill) di dalamnya. */
+  function preText(pre) {
+    var clone = pre.cloneNode(true);
+    var marks = clone.querySelectorAll(".copy-hide");
+    for (var i = 0; i < marks.length; i++) {
+      marks[i].parentNode.removeChild(marks[i]);
+    }
+    return clone.textContent
+      .replace(/^[ \t]*\n/, "")                 /* buang baris kosong pertama */
+      .replace(/\n{3,}/g, "\n\n")             /* rapikan baris kosong berlebih */
+      .replace(/[ \t]+$/gm, "")                /* buang spasi sisa di akhir baris */
+      .replace(/\s+$/, "");
+  }
+
+  function collect(root) {
+    var sel = root && root.querySelectorAll ? root.querySelectorAll(".prompt pre") : [];
+    var out = [];
+    for (var i = 0; i < sel.length; i++) {
+      var t = preText(sel[i]);
+      if (t) out.push(t);
+    }
+    return out;
+  }
+
+  var SEP = "\n\n" + new Array(30).join("=") + "\n\n";
+
+  /* Tombol di dalam .prompt menyalin 1 blok; tombol di header kartu menyalin
+     semua blok milik kartu itu; tanpa scope = seluruh dokumen. */
+  function scopeOf(btn) {
+    var block = btn.closest(".prompt");
+    if (block) return block.querySelector("pre");
+    var card = btn.closest(".card");
+    if (card) return card;
+    return document;
+  }
+
+  function join(root) {
+    return collect(root).join(SEP);
+  }
+
+  function handleCopy(btn) {
+    var pre = btn.closest(".prompt") ? btn.closest(".prompt").querySelector("pre") : null;
+    var text = pre ? preText(pre) : join(scopeOf(btn));
+    if (!text.trim()) { toast("Tidak ada teks untuk disalin", true); return; }
+    copyText(text).then(function (ok) {
+      if (ok === false) {
+        toast("Gagal menyalin \u2014 salin manual ya", true);
+        return;
+      }
+      toast(pre ? "Prompt disalin!" : (btn.closest(".card") ? "Semua prompt di kartu ini disalin!" : "Semua prompt disalin!"));
+      flash(btn);
+    });
+  }
+
+  function copyScope(btn, scope, okMsg) {
+    var text = join(scope);
+    if (!text.trim()) { toast("Tidak ada teks untuk disalin", true); return; }
+    copyText(text).then(function (ok) {
+      if (ok === false) { toast("Gagal menyalin \u2014 salin manual ya", true); return; }
+      toast(okMsg);
+      flash(btn);
+    });
+  }
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest ? e.target.closest("[data-copy],[data-copy-section],[data-copy-all]") : null;
+    if (!btn) return;
+    e.preventDefault();
+    if (btn.hasAttribute("data-copy-section")) {
+      copyScope(btn, btn.closest(".sec"), "Bagian ini disalin!");
+      return;
+    }
+    if (btn.hasAttribute("data-copy-all")) {
+      copyScope(btn, document, "Semua prompt disalin!");
+      return;
+    }
+    handleCopy(btn);
+  });
+
+  /* ---------------- Search / filter ---------------- */
+  var q = document.getElementById("q");
+  var wrap = document.getElementById("searchWrap");
+  var clear = document.getElementById("qClear");
+  var countEl = document.getElementById("count");
+  var emptyEl = document.getElementById("empty");
+  var cards = Array.prototype.slice.call(document.querySelectorAll(".card"));
+  var secs = Array.prototype.slice.call(document.querySelectorAll(".sec"));
+
+  function apply() {
+    var term = q.value.trim().toLowerCase();
+    wrap.classList.toggle("is-filled", q.value.length > 0);
+    var shownCards = 0, shownPrompts = 0;
+
+    cards.forEach(function (card) {
+      var hay = (card.textContent + " " + (card.dataset.key || "")).toLowerCase();
+      var ok = !term || hay.indexOf(term) !== -1;
+      card.style.display = ok ? "" : "none";
+      if (ok) {
+        shownCards++;
+        var pb = card.querySelectorAll(".prompt");
+        for (var i = 0; i < pb.length; i++) shownPrompts++;
+      }
+    });
+
+    /* Sembunyikan section yang punya kartu tapi tidak ada kartu yang cocok. */
+    secs.forEach(function (sec) {
+      var hasCards = sec.querySelectorAll(".card").length > 0;
+      if (!hasCards) return;
+      var any = sec.querySelector(".card:not([style*='none'])");
+      sec.style.display = any ? "" : "none";
+    });
+
+    countEl.textContent = term
+      ? shownPrompts + " blok prompt \u00b7 " + shownCards + " kartu"
+      : cards.length + " kartu \u00b7 " + document.querySelectorAll(".prompt").length + " blok prompt";
+
+    emptyEl.classList.toggle("is-on", term !== "" && shownCards === 0);
+  }
+
+  q.addEventListener("input", apply);
+  clear.addEventListener("click", function () {
+    q.value = "";
+    q.focus();
+    apply();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "/" && document.activeElement !== q) {
+      e.preventDefault();
+      q.focus();
+      q.select();
+    }
+  });
+  apply();
+
+  /* ---------------- Scroll spy ---------------- */
+  var links = Array.prototype.slice.call(document.querySelectorAll("#toc a"));
+  var byId = {};
+  links.forEach(function (a) { byId[a.getAttribute("href").slice(1)] = a; });
+
+  function spy() {
+    var y = window.scrollY + 140;
+    var cur = null;
+    secs.forEach(function (s) {
+      if (s.style.display === "none") return;
+      if (s.offsetTop <= y) cur = s.id;
+    });
+    links.forEach(function (a) { a.classList.remove("is-active"); });
+    if (cur && byId[cur]) byId[cur].classList.add("is-active");
+  }
+
+  var ticking = false;
+  window.addEventListener("scroll", function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { spy(); ticking = false; });
+  }, { passive: true });
+  window.addEventListener("resize", spy);
+  spy();
+})();
+</script>
+</body>
+</html>
